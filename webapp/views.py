@@ -14,9 +14,3 @@ def cars(request):
 
 def services(request):
     return render(request, 'webapp/services.html')
-
-def single(request):
-    return render(request, 'webapp/../blog/templates/blog/single.html')
-
-def blog(request):
-    return render(request, 'webapp/../blog/templates/blog/blog.html')
