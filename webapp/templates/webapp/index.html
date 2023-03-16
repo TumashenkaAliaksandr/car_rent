@@ -104,8 +104,9 @@
 
 
             <div class="nonloop-block-13 owl-carousel">
+                {% for car in cars %}
               <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_1.jpg' %}" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{ car.photo.url }}" alt="Image" class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
                   <h3><a href="#">Range Rover S64 Coupe</a></h3>
@@ -116,20 +117,20 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                   </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
+                  <div class="rent-price"><span>{{ car.price }}/</span>day</div>
                   </div>
                   <ul class="specs">
                     <li>
                       <span>Doors</span>
-                      <span class="spec">4</span>
+                      <span class="spec">{{ car.dor_num }}</span>
                     </li>
                     <li>
                       <span>Seats</span>
-                      <span class="spec">5</span>
+                      <span class="spec">{{ car.seat_num }}</span>
                     </li>
                     <li>
                       <span>Transmission</span>
-                      <span class="spec">Automatic</span>
+                      <span class="spec">{{ car.transmission.title }}</span>
                     </li>
                     <li>
                       <span>Minium age</span>
@@ -141,6 +142,7 @@
                   </div>
                 </div>
               </div>
+                {% endfor %}
 
 
               <div class="item-1">

@@ -2,7 +2,7 @@
 {% load static %}
 
     {% block content %}
-    <div class="ftco-blocks-cover-1">
+        <div class="ftco-blocks-cover-1">
       <div class="ftco-cover-1 overlay innerpage" style="background-image: url('../../static/webapp/images/hero_2.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -17,13 +17,15 @@
 
     <div class="site-section bg-light">
       <div class="container">
-        <div class="row">
+        <div class="row" id = "car-list">
+
+            {% for car in cars %}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_1.jpg' %}" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="{{ car.photo.url }}" alt="Image" class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
+                  <h3><a href="#">{{ car.title }}</a></h3>
                   <div class="rating">
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
@@ -31,20 +33,20 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                   </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
+                  <div class="rent-price"><span>${{ car.price }}/</span>day</div>
                   </div>
                   <ul class="specs">
                     <li>
                       <span>Doors</span>
-                      <span class="spec">4</span>
+                      <span class="spec">{{ car.dor_num }}</span>
                     </li>
                     <li>
                       <span>Seats</span>
-                      <span class="spec">5</span>
+                      <span class="spec">{{ car.seat_num }}</span>
                     </li>
                     <li>
                       <span>Transmission</span>
-                      <span class="spec">Automatic</span>
+                      <span class="spec">{{ car.transmission.title }}</span>
                     </li>
                     <li>
                       <span>Minium age</span>
@@ -57,216 +59,35 @@
                 </div>
               </div>
           </div>
+            {% endfor %}
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_2.jpg' %}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
-                  <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rating">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                  </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                  </div>
-                  <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
-                  </ul>
-                  <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-          </div>
+        <!-- pagination -->
+            <div class="col-12">
 
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_3.jpg' %}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
-                  <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rating">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                  </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                  </div>
-                  <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
-                  </ul>
-                  <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_1.jpg' %}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
-                  <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rating">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                  </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                  </div>
-                  <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
-                  </ul>
-                  <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_2.jpg' %}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
-                  <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rating">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                  </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                  </div>
-                  <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
-                  </ul>
-                  <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="item-1">
-                <a href="#"><img src="{% static 'webapp/images/img_3.jpg' %}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
-                  <div class="text-center">
-                  <h3><a href="#">Range Rover S64 Coupe</a></h3>
-                  <div class="rating">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                  </div>
-                  <div class="rent-price"><span>$250/</span>day</div>
-                  </div>
-                  <ul class="specs">
-                    <li>
-                      <span>Doors</span>
-                      <span class="spec">4</span>
-                    </li>
-                    <li>
-                      <span>Seats</span>
-                      <span class="spec">5</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">Automatic</span>
-                    </li>
-                    <li>
-                      <span>Minium age</span>
-                      <span class="spec">18 years</span>
-                    </li>
-                  </ul>
-                  <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-
-          <div class="col-12">
-            <span class="p-3">1</span>
-            <a href="#" class="p-3">2</a>
-            <a href="#" class="p-3">3</a>
-            <a href="#" class="p-3">4</a>
-          </div>
+		        {% if cars.has_other_pages %}
+            <div class="pagination">
+                {% if cars.has_previous %}
+                <a href="?page={{ cars.previous_page_number }}#car-list">Back</a>
+            {% endif %}
+            {% for i in cars.paginator.page_range %}
+                {% if cars.number == i %}
+                    <span class="page current-page" style="margin: 0 5px;">{{ i }}</span>
+                {% elif i > cars.number|add:'-3' and i < cars.number|add:'3' %}
+                    <a href="?page={{ i }}#car-list" class="page" style="margin: 0 5px;">{{ i }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if cars.has_next %}
+                <a href="?page={{ cars.next_page_number }}#car-list">Next</a>
+                {% endif %}
+            </div>
+          {% endif %}
+    {#          <div class="col-12">#}
+    {#            <span class="p-3">1</span>#}
+    {#            <a href="#" class="p-3">2</a>#}
+    {#            <a href="#" class="p-3">3</a>#}
+    {#            <a href="#" class="p-3">4</a>#}
+    {#          </div>#}
+            </div>
         </div>
       </div>
     </div>
@@ -302,5 +123,4 @@
 
       </div>
     </div>
-
     {% endblock %}
