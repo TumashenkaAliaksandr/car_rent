@@ -4,9 +4,12 @@ from webapp.models import Car
 
 
 def index(request):
-    cars = Car.objects.all()[:3]
-    main_car = Car.objects.order_by('?').first()
-    context = {'cars': cars, 'main_car': main_car}
+    cars = Car.objects.all()[:6]
+    main_car = Car.objects.filter(is_main=True).first()
+    context = {
+        'cars': cars,
+        'main_car': main_car
+    }
     return render(request, 'webapp/index.html', context=context)
 
 def about(request):

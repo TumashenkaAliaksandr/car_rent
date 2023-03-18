@@ -1200,6 +1200,17 @@ h1, h2, h3, h4, h5,
       width: 20px;
       background: #fff; }
 
+/*buttons under the slider forward and backward*/
+.owl-prev{
+  display: none;
+}
+
+.owl-next{
+  display: none;
+}
+/*--------end---------*/
+
+
 .footer-suscribe-form .form-control {
   color: #000; }
   .footer-suscribe-form .form-control:hover, .footer-suscribe-form .form-control:active, .footer-suscribe-form .form-control:focus {
