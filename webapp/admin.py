@@ -5,7 +5,7 @@ from webapp.models import Car
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    fields = ('title', 'door_num', 'seat_num', 'transmission', 'rating', 'price', 'photo', 'is_main',)
+    fields = ('title', 'door_num', 'seat_num', 'transmission', 'rating', 'price', 'photo', 'is_main', 'preview_photo')
     readonly_fields = ('preview_photo',)
     list_display = ('pk', 'title', 'door_num', 'seat_num', 'transmission', 'is_main',)
     list_display_links = ('title',)
