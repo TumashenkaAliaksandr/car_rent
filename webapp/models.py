@@ -10,7 +10,7 @@ class Car(models.Model):
     ]
 
     title = models.CharField(max_length=100)
-    dor_num = models.PositiveIntegerField()
+    door_num = models.PositiveIntegerField()
     seat_num = models.PositiveIntegerField()
     transmission = models.CharField(max_length=10, choices=TRANSMISSION_CHOICES)
     rating = models.IntegerField(validators=[
@@ -23,6 +23,10 @@ class Car(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('webapp:car_detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name_plural = "Cars"
