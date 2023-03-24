@@ -1431,7 +1431,9 @@ h1, h2, h3, h4, h5,
 .feature-car-rent-box-1 {
   position: relative;
   padding: 30px;
-  background: #fff; }
+  background: #fff;
+  opacity: 0.68;
+}
   .feature-car-rent-box-1:before {
     content: "";
     position: absolute;
